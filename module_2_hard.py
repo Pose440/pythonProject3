@@ -18,3 +18,22 @@ def area2(i):
     return passcode
 i = area()
 print(i)
+pair1 = list(range(1, i))
+pair2 = list(range(1, i))
+pairs = []
+result = ""
+for k in pair1:
+    for l in pair2:
+        p1 = k
+        p2 = l
+        if p1 >= p2:
+            continue
+        else:
+            kratno = i % (p1 + p2)
+            if kratno == 0:
+                pairs.append([p1, p2])
+                result = result + str(p1) + str(p2)
+print(*pairs)
+print(result)
+if int(result) == area2(i):
+   print("Проходите")
